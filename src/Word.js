@@ -6,15 +6,15 @@ export const boardDefault = [
     ['','','','',''],
     ['','','','',''],
 ]
-export async function generateWords() {
-    let WordSet;
+export const generateWords = async () => {
+    let wordSet;
     let todaysWord;
     await fetch(wordbank)
         .then(res => res.text())
         .then(result => {
             const wordArr = result.split('\n')
-            WordSet = new Set(wordArr)
-            todaysWord = wordArr[Math.floor(wordArr.length * Math.random())]
+            todaysWord = wordArr[Math.floor(Math.random() * wordArr.length)]
+            wordSet = new Set(wordArr)
         })
-    return {WordSet, todaysWord}
-}
+    return { wordSet, todaysWord }
+}   

@@ -31,18 +31,18 @@ function Keyboard() {
       onDelete()
     } else {
       keys1.map(key => {
-        if(event.key === key) {
-          onInput(key)
+        if(key.toLowerCase() === event.key.toLowerCase()) {
+          onInput(key.toLowerCase())
         }
       })
       keys2.map(key => {
-        if(event.key === key) {
-          onInput(key)
+        if(key.toLowerCase() === event.key.toLowerCase()) {
+          onInput(key.toLowerCase())
         }
       })
       keys3.map(key => {
-        if(event.key === key) {
-          onInput(key)
+        if(key.toLowerCase() === event.key.toLowerCase()) {
+          onInput(key.toLowerCase())
         }
       })
     }
@@ -76,8 +76,8 @@ function Keyboard() {
         <Key 
           keyVal={
             'Del'
+            // <IconComponent className='icon Tuige' icon='#icon-tuige'/> 
           }
-          // <IconComponent className='icon Tuige' icon='#icon-tuige'/> 
           keyType={'Tuige'}
         />
       </div>
@@ -93,10 +93,10 @@ function Keyboard() {
         })}
         <Key 
           keyVal={
-           '↵'
+            '↵'
+            // <IconComponent className='icon Enter' icon='#icon-icon-'/> 
           }
           keyType={'Enter'}
-          // <IconComponent className='icon Enter' icon='#icon-icon-'/> 
         />
       </div>
     </div>

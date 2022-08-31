@@ -2,11 +2,11 @@ import { createContext, useEffect, useState } from 'react';
 import './App.css';
 import Board from './components/Board';
 import Keyboard from './components/Keyboard';
-import EndGame from './components/EndGame';
 import { boardDefault, generateWords } from './Word';
 import Tips from './components/Tips';
 import GameOver from './GameOver';
 import Confetti from 'react-confetti';
+import GameFail from './components/GameFail';
 
 export const AppContext = createContext();
 function App() {
@@ -22,14 +22,14 @@ function App() {
     gameOver:false,
     gussed: false
   })
-
+  
   let attemptPosition = currAttempt.attempt;
   let letterPosition = currAttempt.letter;
 
   useEffect(() => {
     generateWords()
       .then(words => {
-        setWordset(words.WordSet)
+        setWordset(words.wordSet)
         setCorrectWord(words.todaysWord)
       })
   },[])
@@ -85,7 +85,7 @@ function App() {
   function onInput(keyVal) {
     if(letterPosition === 5) return;
       let newBoard = [...board];
-      newBoard[attemptPosition][letterPosition] = keyVal.toLowerCase()
+      newBoard[attemptPosition][letterPosition] = keyVal
       setBoard(newBoard)
       setCurrAttempt({
         ...currAttempt,
@@ -126,16 +126,14 @@ function App() {
         <Board />
        
         {
-          gameOver.gameOver ? <GameOver /> :
+          (gameOver.gameOver && gameOver.gussed) ? <GameOver answer={correctWord}/> :
+          (gameOver.gameOver && !gameOver.gussed) ? <GameFail answer={correctWord}/> :
           <div>
-            <div className='gameopt'>
-              <Tips/>
-              <EndGame/>
-            </div>
+            <Tips/>
             <Keyboard />
           </div>  
         }
-       { `answer : ${correctWord}`}
+       {/* { `@HZY 觉得这个App还少个首页、暗黑模式还有个bug`} */}
       </AppContext.Provider> 
     </div>
   );
