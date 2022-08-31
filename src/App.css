@@ -1,0 +1,149 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'DynaPuff', sans-serif,cursive;
+  font-weight: 100;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s;
+}
+nav {
+  display: flex;
+  margin-top: 5%;
+}
+nav > p {
+  font-size: 13px;
+}
+.board {
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 0.1px solid black; */
+  border-radius: 10px;
+  transition: all 0.5s;
+
+}
+.row {
+  display: flex;
+  width: 80%;
+  height: 15%;
+  flex-direction: row;
+  margin-bottom: 0.3rem;
+}
+.letter {
+  width: 50%;
+  height: 90%;
+  border: 1px solid black;
+  margin: 0.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  transition: all 0.2s;
+}
+.keyboard {
+  /* border: 1px solid black; */
+  width: 22rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 17%;
+  margin-top: 1%;
+}
+.icon {
+  width: 20px;
+  height: 25px;
+}
+/* .Enter {
+  width: 30px;
+  height: 30px;
+} */
+.key {
+  width: 10%;
+  border: 1px solid black;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  margin-right: 1%;
+  font-size: 1.2rem;
+
+}
+.restart {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.3rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+.huanci {
+  background-color: #76b852;
+  color: white;
+  border: none;
+}
+.toukan {
+  border: 1px solid #76b852;
+  color: #76b852;
+}
+.gameopt {
+  display: flex;
+  justify-content: center;
+}
+.correct {
+  background-color: #9de477;
+  border: none;
+
+}
+.wrong {
+  background-color: rgba(254, 69, 32, 0.907);
+  border: none;
+  color: white;
+
+}
+.almost {
+  background-color: rgb(255, 189, 66);
+  border: none;
+}
+.light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+.red {
+  background-color: rgba(254, 69, 32, 0.907);
+}
+
+
+.orange {
+  background-color: rgb(255, 189, 66);
+}
+.green {
+  background-color: #9de477;
+}
+p {
+  margin-bottom: 1.4px;
+  padding: 0;
+}
+.lightSet {
+  margin-left: 15px;
+  display: flex;
+}
+
+.disabled {
+  border: 1px solid rgb(217, 217, 217);
+  color: rgb(220, 220, 220);
+  transition: all 0.3s;
+}
