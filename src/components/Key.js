@@ -15,7 +15,7 @@ function Key({keyVal, keyType, disabled}) {
       onDelete()
     }
     if(keyType === 'normal') {
-      onInput(keyVal)
+      onInput(keyVal.toLowerCase())
     }
     if(keyType === 'Enter') {
       onEnter()
