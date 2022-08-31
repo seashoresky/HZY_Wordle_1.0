@@ -30,7 +30,21 @@ function Keyboard() {
     } else if(event.key === 'Backspace') {
       onDelete()
     } else {
-      onInput(event.key)
+      keys1.map(key => {
+        if(event.key === key) {
+          onInput(key)
+        }
+      })
+      keys2.map(key => {
+        if(event.key === key) {
+          onInput(key)
+        }
+      })
+      keys3.map(key => {
+        if(event.key === key) {
+          onInput(key)
+        }
+      })
     }
   }
   return (
@@ -61,8 +75,9 @@ function Keyboard() {
         })}
         <Key 
           keyVal={
-            <IconComponent className='icon Tuige' icon='#icon-tuige'/> 
+            'Del'
           }
+          // <IconComponent className='icon Tuige' icon='#icon-tuige'/> 
           keyType={'Tuige'}
         />
       </div>
@@ -78,9 +93,10 @@ function Keyboard() {
         })}
         <Key 
           keyVal={
-            <IconComponent className='icon Enter' icon='#icon-icon-'/> 
+           '↵'
           }
           keyType={'Enter'}
+          // <IconComponent className='icon Enter' icon='#icon-icon-'/> 
         />
       </div>
     </div>

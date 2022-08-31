@@ -66,6 +66,10 @@ function App() {
         gameOver:true,
         gussed:false
       })
+      setCurrAttempt({
+        attempt: attemptPosition + 1,
+        letter: 0
+      })
       return;
     }
     if(Wordset.has(currWord)) {
