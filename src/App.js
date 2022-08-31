@@ -81,7 +81,7 @@ function App() {
   function onInput(keyVal) {
     if(letterPosition === 5) return;
       let newBoard = [...board];
-      newBoard[attemptPosition][letterPosition] = keyVal
+      newBoard[attemptPosition][letterPosition] = keyVal.toLowerCase()
       setBoard(newBoard)
       setCurrAttempt({
         ...currAttempt,
