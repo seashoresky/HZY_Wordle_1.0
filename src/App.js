@@ -7,6 +7,7 @@ import Tips from './components/Tips';
 import GameOver from './GameOver';
 import Confetti from 'react-confetti';
 import GameFail from './components/GameFail';
+import ReactSwitch from 'react-switch';
 
 export const AppContext = createContext();
 function App() {
@@ -22,6 +23,7 @@ function App() {
     gameOver:false,
     gussed: false
   })
+  const [theme, setTheme] = useState('dark')
   
   let attemptPosition = currAttempt.attempt;
   let letterPosition = currAttempt.letter;
@@ -33,6 +35,10 @@ function App() {
         setCorrectWord(words.todaysWord)
       })
   },[])
+
+  function toggleTheme() {
+    setTheme(curr => (curr === 'light'?'dark':'light'))
+  }
 
   function onDelete() {
     if(letterPosition === 0) return;
@@ -94,10 +100,25 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
+    <div className='switchPos' id={theme}>
+        <div className='switch'>
+           <label className='labelforSwitch'>
+              {theme === 'light'?'light':'dark'}
+            </label>
+            <ReactSwitch 
+              onChange={toggleTheme}
+              checked={theme === 'dark'}
+            />
+          </div>
+      </div>
+    <div className="App" id={theme}>
       {gameOver.gussed && <Confetti />}
+      
+      
       <nav>
-        <h1>HZY's Wordle 1.0</h1>
+        
+        <h1>HZY's Wordle </h1>
         <div className='title'>
           <p>⚡️Beta</p>
           <div className='lightSet'>
@@ -136,6 +157,7 @@ function App() {
        {/* { `@HZY 觉得这个App还少个首页、暗黑模式还有个bug`} */}
       </AppContext.Provider> 
     </div>
+    </>
   );
 }
 

@@ -12,9 +12,36 @@ html, body {
   width: 100vw;
   transition: all 0.5s;
 }
+#light {
+  background-color: white;;
+}
+#dark {
+  background-color: black;
+  color: white;
+}
 nav {
   display: flex;
   margin-top: 5%;
+}
+.switchPos {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.3rem;
+  transition: all 0.5s;
+}
+.switch {
+  margin-right: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.labelforSwitch {
+  margin-right: 0.3rem;
+  font-family: 'DynaPuff', sans-serif,cursive;
+  font-size: 1.15rem;
+}
+#dark .labelforSwitch {
+  color: white;
 }
 nav > p {
   font-size: 13px;
@@ -49,6 +76,9 @@ nav > p {
   font-size: 1.4rem;
   transition: all 0.2s;
 }
+#dark .letter {
+  border: 1px solid white;
+}
 .keyboard {
   /* border: 1px solid black; */
   width: 23.4rem;
@@ -82,7 +112,9 @@ nav > p {
   place-items: center;
   margin-right: 0.3%;
   font-size: 1.2rem;
-
+}
+#dark .key {
+  border: 1px solid white;
 }
 .restart {
   font-size: 1.3rem;
