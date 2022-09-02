@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { AppContext } from '../App'
+import { AppContext } from '../pages/Home'
+
 
 function Tips() {
   const {correctWord, gameOver, setGameOver} = useContext(AppContext)
@@ -27,7 +28,7 @@ function Tips() {
           className='restart toukan'
           onClick={buwan}
         >
-          &nbsp;不想玩了&nbsp;
+          &nbsp;偷看答案&nbsp;
         </div>
       </div>
       <div className={tishikai? `tishikai`:`tishiguan`}>

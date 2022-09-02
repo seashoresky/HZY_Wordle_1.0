@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../App'
+import { AppContext } from '../pages/Home'
+
 
 function Key({keyVal, keyType, disabled}) {
   const {
